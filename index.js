@@ -16,7 +16,13 @@ http.listen(3000, function() {
   console.log('Listening on port 3000');
 })
 
+
 // Handle a new connection
 io.on('connection', function(socket) {
 
+
+  socket.on('new circle', function(clientCircle) {
+    io.emit('new circle', clientCircle)
+  })
+  
 })
