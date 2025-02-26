@@ -12,17 +12,31 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 
-http.listen(3000, function() {
-  console.log('Listening on port 3000');
+http.listen(78785, function() {
+  console.log('Listening on port 78785');
 })
 
 
 // Handle a new connection
 io.on('connection', function(socket) {
+  socket.on('new circle', function(newCircle) {
 
+<<<<<<< Updated upstream
 
   socket.on('new circle', function(clientCircle) {
     io.emit('new circle', clientCircle)
   })
   
+=======
+    io.emit('new circle', newCircle);
+
+  });
+
+  socket.on('new client', function() {
+
+    console.log("A NEW USE IS H ER! HEA UNSRE IS HERE!!!!!!!!!")
+    io.emit('new circle');
+
+  });
+>>>>>>> Stashed changes
 })
