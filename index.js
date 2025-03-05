@@ -21,22 +21,9 @@ http.listen(78785, function() {
 io.on('connection', function(socket) {
   socket.on('new circle', function(newCircle) {
 
-<<<<<<< Updated upstream
 
   socket.on('new circle', function(clientCircle) {
     io.emit('new circle', clientCircle)
   })
   
-=======
-    io.emit('new circle', newCircle);
-
-  });
-
-  socket.on('new client', function() {
-
-    console.log("A NEW USE IS H ER! HEA UNSRE IS HERE!!!!!!!!!")
-    io.emit('new circle');
-
-  });
->>>>>>> Stashed changes
 })
